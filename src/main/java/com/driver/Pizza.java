@@ -55,10 +55,28 @@ public class Pizza {
     }
 
     public String getBill(){
-        if (this.bill.toString().endsWith("\n"))
-            this.bill.deleteCharAt(this.bill.length() - 1);
-        this.bill.append("\nTotal Price: ").append(getPrice()).append("\n");
-        return this.bill.toString();
-    }
+    // Clear the bill string
+    this.bill.setLength(0);
+    // Append the base price
+    this.bill.append("Base Price Of The Pizza: ").append(this.basePrice).append("\n");
+    
+    // Append extra cheese if added
+    if (this.extraCheeseAdded)
+        this.bill.append("Extra Cheese Added: ").append(extraCheesePrice).append("\n");
+
+    // Append extra toppings if added
+    if (this.extraToppingsAdded)
+        this.bill.append("Extra Toppings Added: ").append(extraToppingsPrice).append("\n");
+
+    // Append paper bag if added
+    if (this.paperBagAdded)
+        this.bill.append("Paperbag Added: ").append(paperBagPrice).append("\n");
+
+    // Append the total price
+    this.bill.append("Total Price: ").append(getPrice()).append("\n");
+
+    return this.bill.toString();
+}
+
 
 }
