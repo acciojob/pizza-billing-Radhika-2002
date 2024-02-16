@@ -54,7 +54,7 @@ public class Pizza {
         return total;
     }
 
-   public String getBill(){
+  public String getBill(){
     // Clear the bill string
     this.bill.setLength(0);
     // Append the base price
@@ -77,4 +77,5 @@ public class Pizza {
 
     return this.bill.toString();
 }
+
 }
