@@ -55,10 +55,7 @@ public class Pizza {
     }
 
     public String getBill(){
-        if (this.bill.toString().endsWith("\n"))
-            this.bill.deleteCharAt(this.bill.length() - 1);
-        this.bill.append("\nTotal Price: ").append(getPrice());
+        this.bill.append("Total Price: ").append(getPrice());
         return this.bill.toString();
     }
-
 }
